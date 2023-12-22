@@ -1,0 +1,56 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "Select all warehouses.\n", 
+            "id": 0, 
+            "sql": "select * from warehouses;\n"
+        }, 
+        {
+            "nl": "Select all boxes with a value larger than $150.\n", 
+            "id": 1, 
+            "sql": "select * from boxes where Value>150;\n"
+        }, 
+        {
+            "nl": "Select all distinct contents in all the boxes.\n", 
+            "id": 2, 
+            "sql": "select distinct contents from boxes;\n"
+        }, 
+        {
+            "nl": "Select the average value of all the boxes.\n", 
+            "id": 3, 
+            "sql": "select avg(value) from boxes;\n"
+        }, 
+        {
+            "nl": "Select the warehouse code and the average value of the boxes in each warehouse.\n", 
+            "id": 4, 
+            "sql": "select warehouse, avg(value) from boxes group by warehouse;\n"
+        }, 
+        {
+            "nl": "Same as previous exercise, but select only those warehouses where the average value of the boxes is greater than 150.\n", 
+            "id": 5, 
+            "sql": "select warehouse, avg(value) \nfrom boxes \ngroup by warehouse\nhaving avg(value)> 150;\n"
+        }, 
+        {
+            "nl": "Select the code of each box, along with the name of the city the box is located in.\n", 
+            "id": 6, 
+            "sql": "select boxes.code, warehouses.location\nfrom boxes join warehouses\non boxes.Warehouse = Warehouses.Code;\nSELECT Boxes.Code, Location\n      FROM Warehouses \nINNER JOIN Boxes ON Warehouses.Code = Boxes.Warehouse;\n"
+        }, 
+        {
+            "nl": "Select the warehouse codes, along with the number of boxes in each warehouse. \n", 
+            "id": 7, 
+            "sql": "select Warehouse, count(*) \nfrom boxes \ngroup by warehouse;\n"
+        }, 
+        {
+            "nl": "Select the codes of all warehouses that are saturated (a warehouse is saturated if the number of boxes in it is larger than the warehouse's capacity).\n", 
+            "id": 8, 
+            "sql": "SELECT Code\n   FROM Warehouses\n   WHERE Capacity <\n   (\n     SELECT COUNT(*)\n       FROM Boxes\n       WHERE Warehouse = Warehouses.Code\n   );\n"
+        }, 
+        {
+            "nl": "Select the codes of all the boxes located in Chicago.", 
+            "id": 9, 
+            "sql": "select Boxes.code \nfrom boxes join Warehouses\non boxes.warehouse = warehouses.code\nwhere warehouses.location = 'Chicago';\nSELECT Code\nFROM Boxes\n   WHERE Warehouse IN\n   (\n     SELECT Code\n       FROM Warehouses\n       WHERE Location = 'Chicago'\n   );"
+        }
+    ], 
+    "review_id": null
+}

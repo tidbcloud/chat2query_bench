@@ -1,0 +1,41 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "Select the title of all movies.\n", 
+            "id": 0, 
+            "sql": "select title from movies;\n"
+        }, 
+        {
+            "nl": "Show all the distinct ratings in the database.\n", 
+            "id": 1, 
+            "sql": "select distinct rating from movies;\n"
+        }, 
+        {
+            "nl": "Show all unrated movies.\n", 
+            "id": 2, 
+            "sql": "select * \nfrom movies\nwhere rating is NULL;\n"
+        }, 
+        {
+            "nl": "Select all movie theaters that are not currently showing a movie.\n", 
+            "id": 3, 
+            "sql": "select * from MovieTheaters\nwhere Movie is NULL;\n"
+        }, 
+        {
+            "nl": "Select all data from all movie theaters and, additionally, the data from the movie that is being shown in the theater (if one is being shown).\n", 
+            "id": 4, 
+            "sql": "SELECT *\n   FROM MovieTheaters LEFT JOIN Movies\n   ON MovieTheaters.Movie = Movies.Code;\n"
+        }, 
+        {
+            "nl": "Select all data from all movies and, if that movie is being shown in a theater, show the data from the theater.\n", 
+            "id": 5, 
+            "sql": "SELECT *\n   FROM Movies LEFT JOIN MovieTheaters\n   ON Movies.Code = MovieTheaters.Movie;\n"
+        }, 
+        {
+            "nl": "Show the titles of movies not currently being shown in any theaters.", 
+            "id": 6, 
+            "sql": "SELECT Movies.Title\n   FROM MovieTheaters RIGHT JOIN Movies\n   ON MovieTheaters.Movie = Movies.Code\n   WHERE MovieTheaters.Movie IS NULL;\nSELECT Title FROM Movies\n   WHERE Code NOT IN\n   (\n     SELECT Movie FROM MovieTheaters\n     WHERE Movie IS NOT NULL\n   );"
+        }
+    ], 
+    "review_id": null
+}

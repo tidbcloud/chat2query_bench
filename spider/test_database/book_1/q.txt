@@ -1,0 +1,37 @@
+List of books, the publication year of each of them and their authors, ordered by publication year
+
+List of books that were published before 01-01-2000.
+
+List of clients that have bought at least one book. 
+
+List of clients that bought the book whose ISBN= 4554672899910.
+
+List of clients whose name contains  ‘Jo’ and the books that they have bought. 
+
+List of clients that have bought at least a book whose price is greater than 10.
+
+List of clients that have placed more than one order in the same date. 
+
+List of clients and dates in which they have placed orders that have not been sent yet. 
+
+List of clients that have not bought books whose price is greater than 10.
+
+List of books whose sale price is greater than 30€ or that were published before 2000. 
+
+List of books and amount of copies of each of them that have been sold. 
+
+List of clients and the total amount that they have spent in the bookstore. 
+
+Profits obtained from sales of books. 
+
+Orders whose total amount is greater than 100.
+
+Orders and the total amount of each of them that contains more than a book (title). 
+
+Orders and the total amount of each of them that contains more than 4 copies
+
+List of the most expensive books. 
+
+List of books that have not been sold or that have been sold but the profit per copy is less than 5
+
+List of clients that have bought more than one copy of a book sometime

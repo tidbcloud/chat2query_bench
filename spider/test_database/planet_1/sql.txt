@@ -1,0 +1,14 @@
+select client.name 
+from client join Package
+on client.AccountNumber = Package.Recipient
+where package.Weight = 1.5;
+
+select sum(weight) from Package 
+where Sender = (
+select Recipient from Package where Weight = 1.5
+);
+SELECT SUM(p.weight) 
+FROM Client AS c 
+  JOIN Package as P 
+  ON c.AccountNumber = p.Sender
+WHERE c.Name = "Al Gore's Head";

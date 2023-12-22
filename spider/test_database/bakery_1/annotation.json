@@ -1,0 +1,58 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "Find all chocolate-flavored items on the menu whose price is under $5.00. For each item output the flavor, the name (food type) of the item, and the price.\n", 
+            "id": 0
+        }, 
+        {
+            "nl": "Report the prices of any lemon-flavored items. Output the flavor, the name (food type) and the price of each pastry.\n", 
+            "id": 1
+        }, 
+        {
+            "nl": "Find all customers who made a purchase on October 3, 2007. Report the name of the customer (first, last).\n", 
+            "id": 2
+        }, 
+        {
+            "nl": "Find all types of cookies purchased by KIP ARNN during the month of October of 2007. Report each cookie type (flavor, food type) exactly once.\n", 
+            "id": 3
+        }, 
+        {
+            "nl": "Report the total amount of money NATACHA STENZ spent at the bakery during the month of October, 2007.\n", 
+            "id": 4
+        }, 
+        {
+            "nl": "Find all customers who purchased, during the same trip to the bakery, two different Croissants. Report first and last names of the customers.\n", 
+            "id": 5
+        }, 
+        {
+            "nl": "Find the total amount of money the bakery earned in October 2007 from selling eclairs. Report just the amount.\n", 
+            "id": 6
+        }, 
+        {
+            "nl": "Report all days on which more than ten tarts were purchased.\n", 
+            "id": 7
+        }, 
+        {
+            "nl": "For each purchase made by NATACHA STENZ output the receipt number, the date of purchase, the total number of items purchased and the amount paid.\n", 
+            "id": 8
+        }, 
+        {
+            "nl": "Find the customer(s) who spent the most on pastries in October of 2007. Report first and last name.\n", 
+            "id": 9
+        }, 
+        {
+            "nl": "Find the type of baked good (food type, flavor) responsible for highest total revenue.\n", 
+            "id": 10
+        }, 
+        {
+            "nl": "Find the day of the highest revenue in the month of October, 2007.\n", 
+            "id": 11
+        }, 
+        {
+            "nl": "Find the best-selling item (by number of purchases) on the day of the highest revenue in October of 2007.\n", 
+            "id": 12
+        }
+    ], 
+    "review_id": null
+}

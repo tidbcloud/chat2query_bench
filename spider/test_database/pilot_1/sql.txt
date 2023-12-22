@@ -1,0 +1,43 @@
+/*** Division with a remainder */
+SELECT DISTINCT pilot_name
+  FROM PilotSkills AS PS1
+  WHERE NOT EXISTS
+       (SELECT *
+          FROM Hangar
+         WHERE NOT EXISTS
+               (SELECT *
+                  FROM PilotSkills AS PS2
+                 WHERE (PS1.pilot_name = PS2.pilot_name)
+                   AND (PS2.plane_name = Hangar.plane_name)));
+
+/* alternatively */
+SELECT PS1.pilot_name
+   FROM PilotSkills AS PS1, Hangar AS H1
+  WHERE PS1.plane_name = H1.plane_name
+  GROUP BY PS1.pilot_name
+  HAVING COUNT(PS1.plane_name) = (SELECT COUNT(plane_name) FROM Hangar);
+
+/* Exact division */
+SELECT PS1.pilot_name
+  FROM PilotSkills AS PS1
+       LEFT OUTER JOIN
+       Hangar AS H1
+       ON PS1.plane_name = H1.plane_name
+  GROUP BY PS1.pilot_name
+HAVING COUNT(PS1.plane_name) = (SELECT COUNT(plane_name) FROM Hangar)
+   AND COUNT(H1.plane_name) = (SELECT COUNT(plane_name) FROM Hangar);
+
+/* Division with JOINS */
+SELECT SP1.Pilot_name
+  FROM (((SELECT plane_name FROM Hangar) AS H1
+         INNER JOIN
+         (SELECT pilot_name, plane_name FROM PilotSkills) AS SP1
+         ON H1.plane_name = SP1.plane_name)
+       INNER JOIN (SELECT *
+                     FROM PilotSkills
+                    WHERE pilot_name = 'Higgins') AS H2
+       ON H2.plane_name = H1.plane_name)
+       GROUP BY SP1.Pilot_name
+HAVING COUNT(*) >= (SELECT COUNT(*)
+                      FROM PilotSkills
+                     WHERE pilot_name = 'Higgins');

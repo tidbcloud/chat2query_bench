@@ -1,0 +1,47 @@
+select * from warehouses;
+
+select * from boxes where Value>150;
+
+select distinct contents from boxes;
+
+select avg(value) from boxes;
+
+select warehouse, avg(value) from boxes group by warehouse;
+
+select warehouse, avg(value) 
+from boxes 
+group by warehouse
+having avg(value)> 150;
+
+select boxes.code, warehouses.location
+from boxes join warehouses
+on boxes.Warehouse = Warehouses.Code;
+SELECT Boxes.Code, Location
+      FROM Warehouses 
+INNER JOIN Boxes ON Warehouses.Code = Boxes.Warehouse;
+
+select Warehouse, count(*) 
+from boxes 
+group by warehouse;
+
+SELECT Code
+   FROM Warehouses
+   WHERE Capacity <
+   (
+     SELECT COUNT(*)
+       FROM Boxes
+       WHERE Warehouse = Warehouses.Code
+   );
+
+select Boxes.code 
+from boxes join Warehouses
+on boxes.warehouse = warehouses.code
+where warehouses.location = 'Chicago';
+SELECT Code
+FROM Boxes
+   WHERE Warehouse IN
+   (
+     SELECT Code
+       FROM Warehouses
+       WHERE Location = 'Chicago'
+   );

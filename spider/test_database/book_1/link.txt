@@ -1,0 +1,1 @@
+https://github.com/ferreiro/SQL-Oracle-databases/blob/master/2_SQL_Queries/Block1%20(AllTheBooks%20Table).sql

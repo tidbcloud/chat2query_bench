@@ -1,0 +1,1 @@
+http://www.cs.jhu.edu/~yarowsky/jhu.sql

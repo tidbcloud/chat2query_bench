@@ -1,0 +1,9 @@
+q0. Retrieve the title of each painting, the artist's last name, its height in inches and its width in inches in descending order of surface area.
+
+q1. Retrieve the artistID, first name, last name, and age at death of the artist(s) who was/were youngest at the time of death. (Note that since the birth and death dates are given as years only, any age computation is approximate, accurate plus or minus one.)
+
+q2. Retrieve the titles of all paintings and sculptures, with the artists' last names, in the database and the age the artist was at the time the work was produced, in order of youngest to oldest such age.
+
+q3. Retrieve the artist's last name and the title of all the undisplayed works.
+
+q4. Write a query to display the artistID, last name and all (distinct) media used by all artists in all paintings. Order the query result by last name, ascending. Your results should include not just the medium ("oil") but the surface the medium is on ("oil on canvas"). Use GROUP_CONCAT to denormalize the data and produce comma-delimited results like this:

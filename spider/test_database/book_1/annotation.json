@@ -1,0 +1,101 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "List of books, the publication year of each of them and their authors, ordered by publication year\n", 
+            "id": 0, 
+            "sql": "SELECT TITLE, A\u00d1O \"YEAR\", NAME \"Author name\"\nFROM BOOK NATURAL JOIN AUTHOR_BOOK, AUTHOR\nWHERE AUTHOR_BOOK.AUTHOR=AUTHOR.IDAUTHOR\nORDER BY A\u00d1O;\n"
+        }, 
+        {
+            "nl": "List of books that were published before 01-01-2000.\n", 
+            "id": 1, 
+            "sql": "SELECT TITLE, A\u00d1O\nFROM BOOK\nWHERE A\u00d1O<'2000';\n"
+        }, 
+        {
+            "nl": "List of clients that have bought at least one book. \n", 
+            "id": 2, 
+            "sql": "SELECT DISTINCT IDCLIENT, NAME\nFROM CLIENT NATURAL JOIN ORDERS;\nselect distinct client.name, Client.IdClient\nfrom Client, Orders where\nClient.IdClient=Orders.IdClient;\n"
+        }, 
+        {
+            "nl": "List of clients that bought the book whose ISBN= 4554672899910.\n", 
+            "id": 3, 
+            "sql": "SELECT IDCLIENT, NAME\nFROM CLIENT NATURAL JOIN ORDERS NATURAL JOIN BOOKS_ORDER\nWHERE ISBN='4554672899910';\n"
+        }, 
+        {
+            "nl": "List of clients whose name contains  \u2018Jo\u2019 and the books that they have bought. \n", 
+            "id": 4, 
+            "sql": "SELECT IDCLIENT, NAME, TITLE\nFROM CLIENT NATURAL JOIN ORDERS NATURAL JOIN BOOKS_ORDER NATURAL JOIN BOOK\nWHERE NAME LIKE '%Jo%';\n"
+        }, 
+        {
+            "nl": "List of clients that have bought at least a book whose price is greater than 10.\n", 
+            "id": 5, 
+            "sql": "SELECT DISTINCT IDCLIENT, NAME\nFROM CLIENT NATURAL JOIN ORDERS NATURAL JOIN BOOKS_ORDER NATURAL JOIN BOOK\nWHERE BOOK.SALEPRICE>10;\n"
+        }, 
+        {
+            "nl": "List of clients that have placed more than one order in the same date. \n", 
+            "id": 6, 
+            "sql": "SELECT IDCLIENT, NAME\nFROM CLIENT\nWHERE IDCLIENT=(\n  SELECT IDCLIENT\n  FROM ORDERS\n  GROUP BY(IDCLIENT,DATEORDER)\n  HAVING COUNT(DATEORDER)>1\n);\n"
+        }, 
+        {
+            "nl": "List of clients and dates in which they have placed orders that have not been sent yet. \n", 
+            "id": 7, 
+            "sql": "SELECT IDCLIENT, NAME, DATEORDER\nFROM CLIENT NATURAL JOIN ORDERS\nWHERE DATEEXPED IS NULL;\n"
+        }, 
+        {
+            "nl": "List of clients that have not bought books whose price is greater than 10.\n", 
+            "id": 8, 
+            "sql": "SELECT DISTINCT IDCLIENT, NAME\nFROM CLIENT\nWHERE IDCLIENT NOT IN (\n  SELECT IDCLIENT\n  FROM ORDERS NATURAL JOIN BOOKS_ORDER NATURAL JOIN BOOK\n  WHERE SALEPRICE < 10\n);\n"
+        }, 
+        {
+            "nl": "List of books whose sale price is greater than 30\u20ac or that were published before 2000. \n", 
+            "id": 9, 
+            "sql": "SELECT TITLE, A\u00d1O, SALEPRICE\nFROM BOOK\nWHERE A\u00d1O<'2000' OR SALEPRICE>30;\n"
+        }, 
+        {
+            "nl": "List of books and amount of copies of each of them that have been sold. \n", 
+            "id": 10, 
+            "sql": "SELECT TITLE, ISBN, SUM(AMOUNT)\nFROM BOOKS_ORDER NATURAL JOIN BOOK\nGROUP BY TITLE, ISBN\nORDER BY SUM(AMOUNT) DESC;\n"
+        }, 
+        {
+            "nl": "List of clients and the total amount that they have spent in the bookstore. \n", 
+            "id": 11, 
+            "sql": "SELECT IDCLIENT, NAME, SUM(AMOUNT*SALEPRICE) \"Total\"\nFROM CLIENT NATURAL JOIN ORDERS NATURAL JOIN BOOKS_ORDER NATURAL JOIN BOOK\nGROUP BY IDCLIENT, NAME;\n"
+        }, 
+        {
+            "nl": "Profits obtained from sales of books. \n", 
+            "id": 12, 
+            "sql": "SELECT SUM(AMOUNT*(SALEPRICE-PURCHASEPRICE)) \"Total\"\nFROM BOOKS_ORDER NATURAL JOIN BOOK;\n"
+        }, 
+        {
+            "nl": "Orders whose total amount is greater than 100.\n", 
+            "id": 13, 
+            "sql": "SELECT IDORDER, SUM(AMOUNT*SALEPRICE) \"TOTAL\"\nFROM BOOKS_ORDER NATURAL JOIN BOOK\nGROUP BY IDORDER\nHAVING SUM(AMOUNT*SALEPRICE)>100\nORDER BY IDORDER;\n"
+        }, 
+        {
+            "nl": "Orders and the total amount of each of them that contains more than a book (title). \n", 
+            "id": 14, 
+            "sql": "SELECT IDORDER, SUM(AMOUNT*SALEPRICE) \"TOTAL\"\nFROM BOOKS_ORDER NATURAL JOIN BOOK\nGROUP BY IDORDER\nHAVING COUNT(TITLE)>1;\n"
+        }, 
+        {
+            "nl": "Orders and the total amount of each of them that contains more than 4 copies\n", 
+            "id": 15, 
+            "sql": "SELECT IDORDER, SUM(AMOUNT*SALEPRICE) \"Total\"\nFROM BOOKS_ORDER NATURAL JOIN BOOK \nWHERE AMOUNT>4\nGROUP BY IDORDER;\n"
+        }, 
+        {
+            "nl": "List of the most expensive books. \n", 
+            "id": 16, 
+            "sql": "SELECT ISBN, TITLE, SALEPRICE\nFROM BOOK\nWHERE SALEPRICE IN (SELECT MAX(SALEPRICE) FROM BOOK);\n"
+        }, 
+        {
+            "nl": "List of books that have not been sold or that have been sold but the profit per copy is less than 5\n", 
+            "id": 17, 
+            "sql": "SELECT ISBN, TITLE\nFROM BOOK\nWHERE(SALEPRICE-PURCHASEPRICE)<5 OR ISBN NOT IN(\n  SELECT DISTINCT ISBN FROM BOOKS_ORDER\n);\n"
+        }, 
+        {
+            "nl": "List of clients that have bought more than one copy of a book sometime", 
+            "id": 18, 
+            "sql": "SELECT NAME\nFROM CLIENT NATURAL JOIN ORDERS\nWHERE IDORDER IN (\n  SELECT IDORDER\n  FROM BOOKS_ORDER\n  WHERE AMOUNT>1\n);"
+        }
+    ], 
+    "review_id": null
+}

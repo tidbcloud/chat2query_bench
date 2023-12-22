@@ -1,0 +1,16 @@
+{
+    "label_id": null, 
+    "data": [
+        {
+            "nl": "Who receieved a 1.5kg package?\n", 
+            "id": 0, 
+            "sql": "select client.name \nfrom client join Package\non client.AccountNumber = Package.Recipient\nwhere package.Weight = 1.5;\n"
+        }, 
+        {
+            "nl": "What is the total weight of all the packages that he sent?", 
+            "id": 1, 
+            "sql": "select sum(weight) from Package \nwhere Sender = (\nselect Recipient from Package where Weight = 1.5\n);\nSELECT SUM(p.weight) \nFROM Client AS c \n  JOIN Package as P \n  ON c.AccountNumber = p.Sender\nWHERE c.Name = \"Al Gore's Head\";"
+        }
+    ], 
+    "review_id": null
+}

@@ -1,0 +1,126 @@
+[
+    {
+        "col_data": [
+            {
+                "column_name": "id",
+                "data_type": "INTEGER",
+                "default_column_name": "Id",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "last_name",
+                "data_type": "TEXT",
+                "default_column_name": "LastName",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "first_name",
+                "data_type": "TEXT",
+                "default_column_name": "FirstName",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "customers"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "id",
+                "data_type": "TEXT",
+                "default_column_name": "Id",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "flavor",
+                "data_type": "TEXT",
+                "default_column_name": "Flavor",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "food",
+                "data_type": "TEXT",
+                "default_column_name": "Food",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "price",
+                "data_type": "REAL",
+                "default_column_name": "Price",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "goods"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "reciept_number",
+                "data_type": "INTEGER",
+                "default_column_name": "RecieptNumber",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "date",
+                "data_type": "TEXT",
+                "default_column_name": "Date",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            },
+            {
+                "column_name": "customer_id",
+                "data_type": "INTEGER",
+                "default_column_name": "CustomerId",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "receipts"
+    },
+    {
+        "col_data": [
+            {
+                "column_name": "reciept",
+                "data_type": "INTEGER",
+                "default_column_name": "Reciept",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 1
+            },
+            {
+                "column_name": "ordinal",
+                "data_type": "INTEGER",
+                "default_column_name": "Ordinal",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 2
+            },
+            {
+                "column_name": "item",
+                "data_type": "TEXT",
+                "default_column_name": "Item",
+                "default_value": null,
+                "not_null": 0,
+                "primary_key": 0
+            }
+        ],
+        "table": "items"
+    }
+]

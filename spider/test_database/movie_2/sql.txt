@@ -1,0 +1,29 @@
+select title from movies;
+
+select distinct rating from movies;
+
+select * 
+from movies
+where rating is NULL;
+
+select * from MovieTheaters
+where Movie is NULL;
+
+SELECT *
+   FROM MovieTheaters LEFT JOIN Movies
+   ON MovieTheaters.Movie = Movies.Code;
+
+SELECT *
+   FROM Movies LEFT JOIN MovieTheaters
+   ON Movies.Code = MovieTheaters.Movie;
+
+SELECT Movies.Title
+   FROM MovieTheaters RIGHT JOIN Movies
+   ON MovieTheaters.Movie = Movies.Code
+   WHERE MovieTheaters.Movie IS NULL;
+SELECT Title FROM Movies
+   WHERE Code NOT IN
+   (
+     SELECT Movie FROM MovieTheaters
+     WHERE Movie IS NOT NULL
+   );

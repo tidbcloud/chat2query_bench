@@ -27,28 +27,19 @@ def parse_cases(output_writer, json_filepath):
             question = i["question"]
             data_summary_id, job_id = setup_context(database)
             loopv2(job_id)
+            count += 1
 
+            try:
+                generated_sql, description, clarified_task, raw_generated_sql, refine_note = query_ai_for_sql(data_summary_id, question)  # noqa
 
-            while True:
-                try:
-                    generated_sql, description, clarified_task, raw_generated_sql, refine_note = query_ai_for_sql(data_summary_id, question)  # noqa
-                    if not generated_sql:
-                        logging.warning(
-                            "no sql found, data_summary_id %s, std spider args %s, results %s, %s, %s, %s, %s",
-                            data_summary_id, i, generated_sql, description, clarified_task, raw_generated_sql, refine_note,  # noqa
-                        )
-                        generated_sql = "sql not found"
+                generated_sql = generated_sql.replace("\t", " ").replace("\n", " ").rstrip(";") + ";"
+            except Exception as e:
+                logging.exception("failed to query_ai_for_sql: %s, retry after 5 seconds", e)
+                generated_sql = "sql not generated"
 
-                    generated_sql = generated_sql.replace("\t", " ").replace("\n", " ") + ";"
-
-                    count += 1
-                    output_writer.write(f"{generated_sql}\n")
-                    output_writer.flush()
-                    # create_test_case(plan_id, question, database, "", sql, [])
-                    logging.info("=================== count =%s====================", count)
-                    break
-                except Exception as e:
-                    logging.exception("failed to query_ai_for_sql: %s, retry after 5 seconds", e)
+            output_writer.write(f"{generated_sql}\n")
+            output_writer.flush()
+            logging.info("=================== count =%s====================", count)
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(10), before_sleep=before_sleep_log(logger, logging.INFO))

@@ -35,10 +35,14 @@ unzip it in the `spider_chat2query` folder, and make sure the folder name is `sp
 Build the container by the following command:
 
 ```bash
+$ docker build -f ./Dockerfile.base . -t spider_chat2query:base
 $ docker build . -t spider_chat2query
 ```
 
 ## Step 5: Generate SQL and run the benchmark
+
+**NOTE** By default, you're running the benchmark in GPT-3.5, to reproduce the best running results,
+please [contact us](mailto:tiinsight@pingcap.com) to upgrade your app settings by using GPT-4.
 
 ```bash
 $ docker run --rm  -e BASE_URL="<Your base url copied from step 1>" -e PUBLIC_KEY="<Public key copied from step 1>" -e PRIVATE_KEY="<Private key copied from step 1>" spider_chat2query /app/evaluation.sh

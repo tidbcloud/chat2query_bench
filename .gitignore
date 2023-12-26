@@ -5,3 +5,7 @@ bin/
 cases_*.csv
 
 result/predict.txt
+
+__MACOSX/
+spider.zip
+spider

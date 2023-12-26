@@ -39,11 +39,17 @@ $ docker build -f ./Dockerfile.base . -t spider_chat2query:base
 $ docker build . -t spider_chat2query
 ```
 
-## Step 5: Generate SQL and run the benchmark
+## Step 5: Generate SQL
 
 **NOTE** By default, you're running the benchmark in GPT-3.5, to reproduce the best running results,
 please [contact us](mailto:tiinsight@pingcap.com) to upgrade your app settings by using GPT-4.
 
 ```bash
-$ docker run --rm  -e BASE_URL="<Your base url copied from step 1>" -e PUBLIC_KEY="<Public key copied from step 1>" -e PRIVATE_KEY="<Private key copied from step 1>" spider_chat2query /app/evaluation.sh
+$./gensql.sh
+```
+
+## Step 6: Run spider eval program
+
+```bash
+$./evaluation.sh
 ```

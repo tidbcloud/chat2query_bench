@@ -3,3 +3,4 @@
 FROM spider_chat2query:base
 WORKDIR /app
 COPY . .
+WORKDIR /root

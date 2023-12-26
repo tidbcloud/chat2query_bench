@@ -12,9 +12,9 @@ logger = logging.getLogger(__name__)
 parser = argparse.ArgumentParser()
 parser.add_argument('--json_file', dest='json_file', type=str, help='filepath where includes train, test and table json file.')
 parser.add_argument('--output', dest='output', type=str, default='result/predict.txt', help='output file where predicted SQL queries will be printed on')
-
+parser.add_argument('--debug', dest='debug', action='store_true', default=False, help='If set, use small data; used\
+ for fast debugging.')
 args = parser.parse_args()
-
 
 def parse_cases(output_writer, json_file):
     count = 0
@@ -27,7 +27,9 @@ def parse_cases(output_writer, json_file):
             data_summary_id, job_id = setup_context(database)
             loopv2(job_id)
             count += 1
-
+            if args.debug:
+               if count > 1:
+                   break
             try:
                 generated_sql, description, clarified_task, raw_generated_sql, refine_note = query_ai_for_sql(data_summary_id, question)  # noqa
 

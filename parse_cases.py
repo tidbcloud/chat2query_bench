@@ -1,5 +1,4 @@
 import argparse
-import csv
 import logging
 import json
 
@@ -11,16 +10,16 @@ from svc import create_data_summary, query_ai_for_sql, loopv2
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 parser = argparse.ArgumentParser()
-parser.add_argument('--json_filepath', dest='json_filepath', type=str, help='filepath where includes train, test and table json file.')
+parser.add_argument('--json_file', dest='json_file', type=str, help='filepath where includes train, test and table json file.')
 parser.add_argument('--output', dest='output', type=str, default='result/predict.txt', help='output file where predicted SQL queries will be printed on')
 
 args = parser.parse_args()
 
 
-def parse_cases(output_writer, json_filepath):
+def parse_cases(output_writer, json_file):
     count = 0
 
-    with open(json_filepath) as f:
+    with open(json_file) as f:
         result = json.loads(f.read())
         for i in result:
             database = i["db_id"]
@@ -49,10 +48,10 @@ def setup_context(dbname):
 
 def run_all_cases():
     output_filename = args.output
-    json_filepath = args.json_filepath
+    json_file = args.json_file
 
     with open(output_filename, 'w', newline='') as output_writer:
-        parse_cases(output_writer, json_filepath)
+        parse_cases(output_writer, json_file)
 
 
 if __name__ == "__main__":

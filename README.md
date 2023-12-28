@@ -1,5 +1,12 @@
 # Spider for Chat2Query
 
+The spider evaluation benchmark of PingCAP Chat2Query program is 86.3, here is codalab link of the benchmark:
+
+https://worksheets.codalab.org/worksheets/0xeaa16ad377f14a21aa8edbed90e49233
+https://worksheets.codalab.org/bundles/0xe1fe59dd2177413b83b958f108ee9693
+
+Below are the steps to reproduce the score.
+
 ## Step 1: Create a new Chat2Query App in TiDBCloud
 
 You have to login in [TiDBCloud](https://tidbcloud.com), and create a Chat2Query DataApp.

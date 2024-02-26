@@ -1,11 +1,6 @@
-# Spider for Chat2Query
+# Bird for Chat2Query
 
-The spider evaluation benchmark of PingCAP Chat2Query program is 86.3, here is codalab link of the benchmark:
-
-https://worksheets.codalab.org/worksheets/0xeaa16ad377f14a21aa8edbed90e49233
-https://worksheets.codalab.org/bundles/0xe1fe59dd2177413b83b958f108ee9693
-
-Below are the steps to reproduce the score.
+Below are the steps to run the bird benchmark.
 
 ## Step 1: Create a new Chat2Query App in TiDBCloud
 
@@ -31,7 +26,7 @@ Save the public key and private key, we'll use it in step 5.
 
 ```bash
 $ git clone https://github.com/tidbcloud/chat2query_bench
-$ cd chat2query_bench/benchmark_spider
+$ cd chat2query_bench/benchmark_bird
 ```
 
 Download the spider dataset: https://drive.google.com/u/0/uc?id=1iRDVHLr4mX2wQKSgA9J8Pire73Jahh0m&export=download

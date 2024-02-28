@@ -22,11 +22,12 @@ Save the Base URL, we'll use it in step 5.
 
 Save the public key and private key, we'll use it in step 5.
 
-## Step 3: Clone the repository
+## Step 3: Clone the repository and install dependencies
 
 ```bash
 $ git clone https://github.com/tidbcloud/chat2query_bench
 $ cd chat2query_bench/benchmark_bird
+$ pip install -r requirements.txt
 ```
 
 Download the bird dataset: https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip

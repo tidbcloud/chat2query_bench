@@ -1,4 +1,4 @@
-# Bird for Chat2Query
+# README for Bird Official to Run Evaluation
 
 Below are the steps to run the bird benchmark.
 

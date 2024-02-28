@@ -1,5 +1,7 @@
 # Bird for Chat2Query
 
+Dev dataset score is 58.15.
+
 Below are the steps to run bird evaluation
 
 ## Step 1: Create a new Chat2Query App in TiDBCloud

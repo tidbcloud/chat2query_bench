@@ -1,17 +1,37 @@
-import csv
+import base64
 import glob
 import json
 import logging
 import os
-import time
-from concurrent.futures import ProcessPoolExecutor
+
+import requests
 
 from svc import create_data_summary, loopv2, query_ai_for_sql
 
 base_url = os.getenv("BASE_URL")
 public_key = os.getenv("PUBLIC_KEY")
 private_key = os.getenv("PRIVATE_KEY")
+bird_secret = os.getenv("BIRD_SECRET") or ""
+bird_db_url = os.getenv("BIRD_DB_URL") or ""
 
+
+logging.basicConfig(level=logging.INFO)
+
+
+def upload_sqlite(db_name: str):
+    headers = {
+        "X-Bird-Secret": bird_secret,
+    }
+
+    with open(f"./data/dev_databases/{db_name}/{db_name}.sqlite", "rb") as f:
+        data = base64.b64encode(f.read())
+        payload = {
+            "filename": db_name,
+            "data": data.decode("utf-8"),
+        }
+        resp = requests.post(bird_db_url, json=payload, headers=headers)
+        logging.info("upload_sqlite: %s, %s, %s, %s, %s, %s", db_name, resp.status_code, resp.text, headers, bird_db_url, resp.headers)
+        resp.raise_for_status()
 
 
 def parse_cases(data_summary_id, bird_json_filename, dbname):
@@ -43,10 +63,15 @@ def parse_cases(data_summary_id, bird_json_filename, dbname):
 
 def run_db_cases():
     cases_filename = "./data/dev.json"
-    output_filename = "predict_dev.json"
+    output_filename = "./exp_result/turbo_output/predict_dev_eda.json"
 
     results = {}
     for dbname in get_all_db_names():
+        # if dbname != "debit_card_specializing":
+            # continue
+
+        upload_sqlite(dbname)
+
         data_context_id, job_id = create_data_summary(dbname)
         loopv2(job_id)
 
@@ -75,8 +100,8 @@ def get_all_db_names():
 
 
 if __name__ == "__main__":
-    if not (base_url and public_key and private_key):
-        print("Missing environment variables: BASE_URL, PUBLIC_KEY, PRIVATE_KEY")
+    if not (base_url and public_key and private_key and bird_secret and bird_db_url):
+        print("Missing environment variables: BASE_URL, PUBLIC_KEY, PRIVATE_KEY, BIRD_SECRET, BIRD_DB_URL")
         exit(1)
 
     run_db_cases()

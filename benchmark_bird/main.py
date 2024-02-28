@@ -63,13 +63,10 @@ def parse_cases(data_summary_id, bird_json_filename, dbname):
 
 def run_db_cases():
     cases_filename = "./data/dev.json"
-    output_filename = "./exp_result/turbo_output/predict_dev_eda.json"
+    output_filename = "./exp_result/turbo_output/predict_dev.json"
 
     results = {}
     for dbname in get_all_db_names():
-        # if dbname != "debit_card_specializing":
-            # continue
-
         upload_sqlite(dbname)
 
         data_context_id, job_id = create_data_summary(dbname)

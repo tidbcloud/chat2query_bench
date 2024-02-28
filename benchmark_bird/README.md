@@ -48,7 +48,7 @@ data/
 
 > Send us an email for `BIRD_SECRET` and `BIRD_DB_URL`
 
-Paste the PUBLIC_KEY, PRIVATE_KEY, BIRD_SECRET, BIRD_DB_URL variables in `runbird.sh`
+Replace or paste the BASE_URL, PUBLIC_KEY, PRIVATE_KEY, BIRD_SECRET, BIRD_DB_URL variables in `runbird.sh`
 
 ## Step 5: Run the script to generate sql and run evaluation
 

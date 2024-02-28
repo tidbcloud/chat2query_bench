@@ -1,3 +1,3 @@
-runbird.sh
+runbird_local.sh
 exp_result/turbo_output/predict_dev.json
 exp_result/turbo_output_kg/predict_dev.json

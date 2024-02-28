@@ -2,4 +2,4 @@ sqlparse==0.4.4
 nltk==3.8.1
 tqdm==4.65.0
 tenacity==8.2.2
-requests==2.30.0
+requests==2.31.0

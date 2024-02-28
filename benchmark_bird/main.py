@@ -55,6 +55,8 @@ def parse_cases(data_summary_id, bird_json_filename, dbname):
                     )
                     generated_sql = "sql not found"
 
+                generated_sql = generated_sql.replace("\n", " ").replace("\t", " ").replace("\r", " ").replace(";", "")
+
                 yield (question_id, generated_sql, database)
             except Exception as e:
                 logging.exception("failed to query_ai_for_sql: %s, retry after 5 seconds", e)

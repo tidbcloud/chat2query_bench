@@ -51,7 +51,14 @@ data/
 
 Replace or paste the BASE_URL, PUBLIC_KEY, PRIVATE_KEY variables in `runbird.sh`
 
+> **NOTE** By default, we will run the bird evaluation with GPT-3.5 model. If you want to use GPT-4 model,
+> you need to provide your own OpenAI API Key(with GPT-4 enabled) and Public Key to us by
+> sending an email to `chat2query@pingcap.com`.
+
 ## Step 5: Run the script to generate sql and run evaluation
+
+> If you want to run the evaluation with GPT-4 model, make sure you've send the OpenAI API Key and Public Key to us and
+> after we've enabled GPT-4 model for you, you can run the script.
 
 ```bash
 $./runbird.sh

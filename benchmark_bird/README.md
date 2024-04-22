@@ -50,7 +50,7 @@ data/
 ## Step 4(Optional): Customize the bird evaluation parameters
 
 > **NOTE** By default, we will run the bird evaluation with GPT-3.5 model. If you want to use GPT-4 model,
-> you need to provide your org_id and public_key to us, and we will enable `settings` api for you. You can do this by
+> you need to provide your org_id to us, and we will enable `settings` api for you. You can do this by
 > sending an email to `chat2query@pingcap.com`.
 
 You can customize the bird evaluation parameters by calling `settings` API, for example:

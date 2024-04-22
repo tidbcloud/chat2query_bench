@@ -1,10 +1,8 @@
 #!/bin/bash
 
-export BASE_URL="https://us-west-2.data.dev.tidbcloud.com/api/v1beta/app/chat2query-EosaVhiP/endpoint"
+export BASE_URL=""
 export PUBLIC_KEY=""
 export PRIVATE_KEY=""
-export BIRD_SECRET=""
-export BIRD_DB_URL="https://data.dev.tidbcloud.com/eda/bird/db"
 
 
 python3 main.py

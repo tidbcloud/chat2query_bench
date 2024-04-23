@@ -33,7 +33,8 @@ $ pip install -r requirements.txt
 ```
 
 Download the bird dataset: https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
-unzip it in the `benchmark_bird/data` folder, and make sure the folder name is `data`, not `dev`.
+unzip it in the `benchmark_bird/data` folder, and make sure the folder name is `data`, not `dev`,
+**rename `dev.sql` to `dev_gold.sql`**.
 
 File structures should like:
 

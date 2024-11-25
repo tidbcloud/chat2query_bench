@@ -7,11 +7,11 @@
 
 ### Spider
 
-![Spider](./spider.jpg)
+![Spider](./figures/spider.png)
 
 ### Bird
 
-![Bird](./bird.jpg)
+![Bird](./figures/bird.jpg)
 
 ## Citation
 

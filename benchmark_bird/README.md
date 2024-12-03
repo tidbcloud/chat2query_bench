@@ -1,6 +1,6 @@
 # Bird for Chat2Query
 
-Dev dataset score is 58.15.
+Dev dataset score is 59.1.
 
 Below are the steps to run bird evaluation
 

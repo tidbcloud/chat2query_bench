@@ -1,13 +1,46 @@
-.idea
-*.pyc
-__pycache__/
-bin/
-cases_*.csv
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-result/predict.txt
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-__MACOSX/
-spider.zip
-spider
+# testing
+/coverage
 
-benchmark_bird/data
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# editor
+.idea/
+.vscode/
+
+.npmrc
+.sentryclirc
+
+# Sentry Config File
+.sentryclirc

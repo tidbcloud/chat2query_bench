@@ -25,7 +25,7 @@ For detailed instructions on how to set up the project locally, please refer to 
 ## Technology Behind TiInsight
 TiInsight is driven by **Chat2Query**, an innovative tool developed by [TiDB Cloud](https://tidbcloud.com/). Chat2Query utilizes the capabilities of Large Language Models (LLMs) to enable users to explore and interact with databases through natural language, **achieving industry-leading accuracy**. With OpenAPI support, it can be seamlessly integrated into your business systems, allowing for a customized TiInsight experience. For more information, please refer to the [Chat2Query API Documentation](https://docs.pingcap.com/tidbcloud/use-chat2query-api).
 
-![chat2queryPrinciple](./figures/chat2query/chat2query_principle_1.jpeg)
+![tiinsight_architecture](./figures/tiinsight/tiinsight_architecture.jpeg)
 
 ### Benchmark Results
 To demonstrate the accuracy and effectiveness of Chat2Query, we have evaluated its performance on the Spider and Bird Benchmarks. Below are the screenshots of our test results, showcasing the high accuracy achieved by our solution. 
@@ -43,7 +43,7 @@ To verify these results and experience the capabilities of Chat2Query yourself, 
 - [Bird Benchmark](./chat2query_benchmark/bird/README.md)
 
 
-### More About TiInsight/Chat2Query
+## Paper About TiInsight/Chat2Query
 
 - [Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models](https://ieeexplore.ieee.org/abstract/document/10597681)
 

@@ -43,8 +43,11 @@ To verify these results and experience the capabilities of Chat2Query yourself, 
 - [Bird Benchmark](./chat2query_benchmark/bird/README.md)
 
 
-### More About Chat2Query
+### More About TiInsight/Chat2Query
+
 - [Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models](https://ieeexplore.ieee.org/abstract/document/10597681)
+
+- [Towards Automated Cross-domain Exploratory Data Analysisthrough Large Language Models](./doc/Towards%20Automated%20Cross-domain%20Exploratory%20Data%20Analysis%20through%20Large%20Language%20Models.pdf)
 
 ## Citation
 

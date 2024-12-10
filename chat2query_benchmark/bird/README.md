@@ -1,26 +1,27 @@
 # Bird for Chat2Query
 
 Test dataset score is **60.98**.
-![Bird](../figures/chat2query_benchmark//bird.jpg)
+
+![Bird](../../figures/chat2query/benchmark_bird.jpg)
 
 Below are the steps to run bird evaluation
 ## Step 1: Create a new Chat2Query App in TiDBCloud
 
 You have to login in [TiDBCloud](https://tidbcloud.com), and create a Chat2Query DataApp.
 
-![Create Chat2Query App Step 1](./images/create_chat2query_app_step1.png)
+![Create Chat2Query App Step 1](../../figures/chat2query/setup/chat2query_create_app_step1.png)
 
-![Create Chat2Query App Step 2](./images/create_chat2query_app_step2.png)
+![Create Chat2Query App Step 2](../../figures/chat2query/setup/chat2query_create_app_step2.png)
 
-![Create Chat2Query App Step 3](./images/create_chat2query_app_step3.png)
+![Create Chat2Query App Step 3](../../figures/chat2query/setup/chat2query_create_app_step3.png)
 
-![Chat2Query Base URL](./images/chat2query_base_url.png)
+![Chat2Query Base URL](../../figures/chat2query/setup/chat2query_base_url.png)
 
 Save the Base URL, we'll use it in step 5.
 
 ## Step 2: Create Chat2Query API Key
 
-![Create Admin API Key](./images/chat2query_create_api_key.png)
+![Create Admin API Key](../../figures/chat2query/setup/chat2query_create_api_key.png)
 
 Save the public key and private key, we'll use it in step 5.
 

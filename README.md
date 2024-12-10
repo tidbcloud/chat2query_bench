@@ -46,10 +46,6 @@ To verify these results and experience the capabilities of Chat2Query yourself, 
 ### More About Chat2Query
 - [Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models](https://ieeexplore.ieee.org/abstract/document/10597681)
 
-- [AI-Powered Data Exploration: Unpacking the Latest Innovations in TiDB Cloud](https://www.pingcap.com/blog/ai-powered-data-exploration-unpacking-the-latest-innovations-in-tidb-cloud/)
-
-- [Chat2Query: The Secret Behind Its Success](./doc/The_Secret_Behind_Chat2Query.md)
-
 ## Citation
 
 Feel free to cite us if you you find the Chat2Query V1 paper helpful.

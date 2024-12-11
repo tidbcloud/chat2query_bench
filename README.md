@@ -1,5 +1,5 @@
 # TiInsight
-In this data-driven era, every decision relies on accurate and rapid data analysis. However, data analysis often requires professional skills and complex tools, posing a significant challenge for many non-technical users. 
+In this data-driven era, every decision relies on accurate and rapid data analysis. However, data analysis often requires professional skills and complex tools, posing a significant challenge for many non-technical users.
 
 TiInsight is an intelligent data analysis platform that allows users to conduct complex data queries and analysis through simple natural language. For those eager to see TiInsight in action without any setup, we offer an [online demo](https://www.tiinsight.chat/) for immediate exploration.
 
@@ -15,7 +15,7 @@ Here are screenshots showing the main features of TiInsight. See how it makes da
 ![tiinsight](./figures/tiinsight/tiinsight_dbexplore_1.jpeg)
 ![tiinsight](./figures/tiinsight/tiinsight_data2chart_1.png)
 ![tiinsight](./figures/tiinsight/tiinsight_data2chart_2.jpeg)
-![tiinsight](./figures/tiinsight/tiinsight_dashboard_1.png) 
+![tiinsight](./figures/tiinsight/tiinsight_dashboard_1.png)
 
 
 ## Local Setup
@@ -28,7 +28,7 @@ TiInsight is driven by **Chat2Query**, an innovative tool developed by [TiDB Clo
 ![tiinsight_architecture](./figures/tiinsight/tiinsight_architecture.jpeg)
 
 ### Benchmark Results
-To demonstrate the accuracy and effectiveness of Chat2Query, we have evaluated its performance on the Spider and Bird Benchmarks. Below are the screenshots of our test results, showcasing the high accuracy achieved by our solution. 
+To demonstrate the accuracy and effectiveness of Chat2Query, we have evaluated its performance on the Spider and Bird Benchmarks. Below are the screenshots of our test results, showcasing the high accuracy achieved by our solution.
 
 - On Spider
 ![Spider](./figures/chat2query/benchmark_spider.png)
@@ -48,7 +48,7 @@ To verify these results and experience the capabilities of Chat2Query yourself, 
 
 - [Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models](https://ieeexplore.ieee.org/abstract/document/10597681)
 
-- [Towards Automated Cross-domain Exploratory Data Analysisthrough Large Language Models](./doc/Towards%20Automated%20Cross-domain%20Exploratory%20Data%20Analysis%20through%20Large%20Language%20Models.pdf)
+- [Towards Automated Cross-domain Exploratory Data Analysisthrough Large Language Models](https://arxiv.org/pdf/2412.07214)
 
 
 If you're interested in the papers, feel free to contact us via email: junpeng.zhu@pingcap.com. We look forward to hearing from you!

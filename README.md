@@ -55,7 +55,7 @@ If you're interested in the papers, feel free to contact us via email: junpeng.z
 
 ## Citation
 
-Feel free to cite us if you you find the Chat2Query V1 paper helpful.
+Feel free to cite us if you find the following papers helpful.
 
 ```bibtex
 @inproceedings{zhu2024chat2query,
@@ -68,4 +68,15 @@ Feel free to cite us if you you find the Chat2Query V1 paper helpful.
 }
 ```
 
-We will release the Chat2Query V2 paper at a later date.
+
+```bibtex
+@misc{zhu2024automatedcrossdomainexploratorydata,
+      title={Towards Automated Cross-domain Exploratory Data Analysis through Large Language Models}, 
+      author={Jun-Peng Zhu and Boyan Niu and Peng cai and Zheming Ni and Jianwei Wan and Kai Xu and Jiajun Huang and Shengbo Ma and Bing Wang and Xuan Zhou and Guanglei Bao and Donghui Zhang and Liu Tang and Qi Liu},
+      year={2024},
+      eprint={2412.07214},
+      archivePrefix={arXiv},
+      primaryClass={cs.DB},
+      url={https://arxiv.org/abs/2412.07214}, 
+}
+```

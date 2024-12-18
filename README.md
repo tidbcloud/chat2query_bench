@@ -1,14 +1,14 @@
 # TiInsight
 In this data-driven era, every decision relies on accurate and rapid data analysis. However, data analysis often requires professional skills and complex tools, posing a significant challenge for many non-technical users.
 
-TiInsight is an intelligent data analysis platform that allows users to conduct complex data queries and analysis through simple natural language. For those eager to see TiInsight in action without any setup, we offer an [online demo](https://www.tiinsight.chat/) for immediate exploration.
+TiInsight is an intelligent data analysis platform that allows users to conduct complex data queries and analysis through simple natural language. For those eager to see TiInsight in action without any setup, we offer an [online demo](https://www.tiinsight.chat/) for immediate exploration. To learn more about how to use TiInsight, please refer to our [documentation](./docs/How_To_Use_TiInsight.md).
 
 ## Core Features
 - **Conversational Interaction**: TiInsight enables users to interact with the platform as if they were having a conversation. The system intelligently understands user intent, executes data queries and analyses, and provides a seamless user experience.
 - **Data Visualization**: TiInsight not only responds quickly to query requests but also presents results in intuitive visual formats, making data easier to understand and analyze.
 - **Customizable Dashboards**: Users can integrate multiple query results into personalized dashboards using the bookmarking feature, creating custom data views tailored to individual or team needs.
 - **Sharing and Collaboration**: TiInsight supports data result sharing, enhancing team collaboration efficiency. Team members can share and discuss data analysis results in real-time, regardless of their location.
-- **Activity Logging**: TiInsight offers detailed operation history tracking, allowing users to easily review past data queries and analyses, facilitating troubleshooting and decision-making review.
+- **Complex Problem Decomposition**: TiInsight supports the automatic breakdown of complex analytical problems, allowing for a step-by-step approach to gather insights and solutions.
 
 Here are screenshots showing the main features of TiInsight. See how it makes data interaction easier and more efficient.
 

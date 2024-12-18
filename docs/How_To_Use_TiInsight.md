@@ -41,3 +41,12 @@ Additionally, you can share your Tiinsight results with others, which facilitate
 
 
 ### Model Selection
+For logged-in users, we offer the additional option to use the `gpt-4o` model for generating results. Compared to `gpt-4o-mini`, `gpt-4o` provides better performance and more effectively showcases TiInsight's capabilities. In the future, we may introduce more model options.
+
+**Please note**: Currently, each user is limited to 100 free calls per day.
+
+![login_model_choose](./imgs/login_model_choose.png)
+
+
+## Share Your Feedback
+We are committed to improving TiInsight and welcome your suggestions. Please share your feedback with us at [tiinsight@pingcap.com](mailto:tiinsight@pingcap.com). Thank you for helping us enhance our service!
